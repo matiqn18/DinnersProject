@@ -1,60 +1,103 @@
-# CodeIgniter 4 Framework
+# DinnersProject
 
-## What is CodeIgniter?
+DinnersProject is a web application designed to manage meals and payments for users. This application allows administrators, accountants, and users to manage meal orders, payments, and system data efficiently.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+**Note:** This project is currently in development. Systems for administrators and accountants have been created. The current goal is to develop the user panel, and in the future, improve views by adding CSS.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Table of Contents
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Functions](#functions)
+- [License](#license)
+- [Author](#author)
 
-## Important Change with index.php
+## Installation
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+### Prerequisites
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+- PHP >= 7.4
+- Composer
+- MySQL
+- XAMPP (or any other local server environment)
 
-**Please** read the user guide for a better explanation of how CI4 works!
+### Steps
 
-## Repository Management
+1. **Clone the repository:**
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+    ```bash
+    git clone https://github.com/yourusername/DinnersProject.git
+    ```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+2. **Navigate to the project directory:**
 
-## Contributing
+    ```bash
+    cd DinnersProject
+    ```
 
-We welcome contributions from the community.
+3. **Install dependencies:**
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+    ```bash
+    composer install
 
-## Server Requirements
+    composer require dompdf/dompdf #If dompdf/dompdf is not already installed, you can add it using:
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+    ```
+    
+## Configuration
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+### Database
+1. **Create Database:**
+    Create database named obiadki
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+2. **Import SQL File:**
+    Use your MySQL or MariaDB management tool to import the `obiadki.sql` file. This file contains the necessary table structures and example data.
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+3. **Ensure your `.env` file contains the correct database configuration::**
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+    ```ini
+    database.default.hostname = localhost
+    database.default.database = obiadki
+    database.default.username = root
+    database.default.password = 
+    database.default.DBDriver = MySQLi
+    ```
+
+## Usage
+### Test User
+For testing purposes with administrative privileges, use the following credentials:
+
+Username: testowy
+Password: 12345
+
+## Functions
+### Administrator Panel
+- Current Functionality:
+  - Manages meal prices and availability through the admin panel.
+  - Views and manages user payments.
+  - Implement user management functionalities (e.g. edit, delete users).
+- Future Enhancements:
+  - Enhance admin panel with data analytics and reporting capabilities.
+
+### Accountant Panel
+- Current Functionality:
+  - Manages payments made by users.
+  - Generates reports related to payments.
+  - Generates PDF reports from orders.
+  - Edits menu items and upload them from a TXT file.
+
+### User Panel (In Progress)
+- Future Functionality:
+  - Place meal orders, view order history, and check payment statuses
+
+### Planned Enhancements
+- Enhancing views with CSS for improved usability.
+- Further development of the user panel.
+
+## License
+This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/.
+
+## Author
+Michał matiqn18/Matian Łukaszczyk
