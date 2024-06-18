@@ -1,0 +1,429 @@
+INFO - 2024-06-11 08:55:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 08:55:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 08:55:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 08:55:52 --> ErrorException: Undefined variable $priceModel
+[Method: GET, Route: admin]
+in APPPATH\Controllers\Admin.php on line 25.
+ 1 APPPATH\Controllers\Admin.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $priceModel', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 25)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 08:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 08:56:04 --> ErrorException: Undefined variable $price
+[Method: GET, Route: admin]
+in APPPATH\Controllers\Admin.php on line 30.
+ 1 APPPATH\Controllers\Admin.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $price', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 08:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 08:56:11 --> ErrorException: Undefined variable $price
+[Method: GET, Route: admin]
+in APPPATH\Views\admin_panel.php on line 14.
+ 1 APPPATH\Views\admin_panel.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $price', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_panel.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_panel.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin_panel', [], true)
+ 5 APPPATH\Controllers\Admin.php(31): view('admin_panel', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 08:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 08:56:12 --> ErrorException: Undefined variable $price
+[Method: GET, Route: admin]
+in APPPATH\Views\admin_panel.php on line 14.
+ 1 APPPATH\Views\admin_panel.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $price', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_panel.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_panel.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin_panel', [], true)
+ 5 APPPATH\Controllers\Admin.php(31): view('admin_panel', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 08:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:05:15 --> ErrorException: Undefined variable $data
+[Method: GET, Route: admin/data]
+in APPPATH\Views\admin_data.php on line 21.
+ 1 APPPATH\Views\admin_data.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin_data', [], true)
+ 5 APPPATH\Controllers\Admin.php(35): view('admin_data', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:05:47 --> ErrorException: Undefined variable $data
+[Method: GET, Route: admin/data]
+in APPPATH\Views\admin_data.php on line 21.
+ 1 APPPATH\Views\admin_data.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin_data', [], true)
+ 5 APPPATH\Controllers\Admin.php(35): view('admin_data', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:05:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:05:48 --> ErrorException: Undefined variable $data
+[Method: GET, Route: admin/data]
+in APPPATH\Views\admin_data.php on line 21.
+ 1 APPPATH\Views\admin_data.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin_data', [], true)
+ 5 APPPATH\Controllers\Admin.php(35): view('admin_data', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:08:26 --> ErrorException: Undefined variable $stardate
+[Method: GET, Route: admin/data]
+in APPPATH\Views\admin_data.php on line 21.
+ 1 APPPATH\Views\admin_data.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $stardate', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin_data', [], true)
+ 5 APPPATH\Controllers\Admin.php(35): view('admin_data', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:08:31 --> ErrorException: Undefined variable $startdate
+[Method: GET, Route: admin/data]
+in APPPATH\Views\admin_data.php on line 21.
+ 1 APPPATH\Views\admin_data.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $startdate', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Views\\admin_data.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin_data', [], true)
+ 5 APPPATH\Controllers\Admin.php(35): view('admin_data', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:08:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:11:16 --> ErrorException: Undefined array key "startdate"
+[Method: GET, Route: admin/data]
+in APPPATH\Controllers\Admin.php on line 36.
+ 1 APPPATH\Controllers\Admin.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "startdate"', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:11:30 --> ErrorException: Undefined array key "startdate"
+[Method: GET, Route: admin/data]
+in APPPATH\Controllers\Admin.php on line 36.
+ 1 APPPATH\Controllers\Admin.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "startdate"', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:11:45 --> ErrorException: Undefined variable $data
+[Method: GET, Route: admin/data]
+in APPPATH\Controllers\Admin.php on line 40.
+ 1 APPPATH\Controllers\Admin.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:11:47 --> ErrorException: Undefined variable $data
+[Method: GET, Route: admin/data]
+in APPPATH\Controllers\Admin.php on line 40.
+ 1 APPPATH\Controllers\Admin.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:11:52 --> ErrorException: Undefined variable $data
+[Method: GET, Route: admin/data]
+in APPPATH\Controllers\Admin.php on line 42.
+ 1 APPPATH\Controllers\Admin.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:11:54 --> ErrorException: Undefined variable $data
+[Method: GET, Route: admin/data]
+in APPPATH\Controllers\Admin.php on line 42.
+ 1 APPPATH\Controllers\Admin.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->systemData()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:32:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:32:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:32:20 --> ArgumentCountError: Too few arguments to function App\Controllers\Admin::updateSystemDate(), 0 passed in D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: POST, Route: admin/updateDateRecords]
+in APPPATH\Controllers\Admin.php on line 44.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:32:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:33:01 --> ErrorException: Undefined variable $request
+[Method: POST, Route: admin/updateDateRecords]
+in APPPATH\Controllers\Admin.php on line 46.
+ 1 APPPATH\Controllers\Admin.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $request', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:34:14 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: admin/updateDateRecords]
+in SYSTEMPATH\BaseModel.php on line 1833.
+ 1 SYSTEMPATH\BaseModel.php(1833): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\Admin.php(59): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:35:54 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: admin/updateDateRecords]
+in SYSTEMPATH\BaseModel.php on line 1833.
+ 1 SYSTEMPATH\BaseModel.php(1833): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\Admin.php(60): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-11 09:36:05 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`obiadki`.`meals`, CONSTRAINT `meals_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `obiadki`.`menu` (`id`)) in D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\MySQLi\Connection.php(310): mysqli->query('TRUNCATE `menu`', 0)
+#1 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `menu`')
+#2 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `menu`')
+#3 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\BaseBuilder.php(2761): CodeIgniter\Database\BaseConnection->query('TRUNCATE `menu`', NULL, false)
+#4 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Model.php(930): CodeIgniter\Database\BaseBuilder->truncate()
+#5 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\app\Controllers\Admin.php(67): CodeIgniter\Model->__call('truncate', Array)
+#6 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+#7 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-06-11 09:36:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot truncate a table referenced in a foreign key constraint (`obiadki`.`meals`, CONSTRAINT `meals_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `obiadki`.`menu` (`id`))
+[Method: POST, Route: admin/updateDateRecords]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2761): CodeIgniter\Database\BaseConnection->query('TRUNCATE `menu`', null, false)
+ 2 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->truncate()
+ 3 APPPATH\Controllers\Admin.php(67): CodeIgniter\Model->__call('truncate', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-11 09:36:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot truncate a table referenced in a foreign key constraint (`obiadki`.`meals`, CONSTRAINT `meals_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `obiadki`.`menu` (`id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `menu`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `menu`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2761): CodeIgniter\Database\BaseConnection->query('TRUNCATE `menu`', null, false)
+ 4 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->truncate()
+ 5 APPPATH\Controllers\Admin.php(67): CodeIgniter\Model->__call('truncate', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-11 09:36:05 --> [Caused by] mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`obiadki`.`meals`, CONSTRAINT `meals_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `obiadki`.`menu` (`id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('TRUNCATE `menu`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `menu`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `menu`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2761): CodeIgniter\Database\BaseConnection->query('TRUNCATE `menu`', null, false)
+ 5 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->truncate()
+ 6 APPPATH\Controllers\Admin.php(67): CodeIgniter\Model->__call('truncate', [])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-11 09:37:24 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`obiadki`.`meals`, CONSTRAINT `meals_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `obiadki`.`menu` (`id`)) in D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\MySQLi\Connection.php(310): mysqli->query('TRUNCATE `menu`', 0)
+#1 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `menu`')
+#2 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `menu`')
+#3 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Database\BaseBuilder.php(2761): CodeIgniter\Database\BaseConnection->query('TRUNCATE `menu`', NULL, false)
+#4 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Model.php(930): CodeIgniter\Database\BaseBuilder->truncate()
+#5 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\app\Controllers\Admin.php(70): CodeIgniter\Model->__call('truncate', Array)
+#6 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+#7 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\Oprogramowanie\Programy\XAMPP\htdocs\PawBookProject\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-06-11 09:37:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot truncate a table referenced in a foreign key constraint (`obiadki`.`meals`, CONSTRAINT `meals_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `obiadki`.`menu` (`id`))
+[Method: POST, Route: admin/updateDateRecords]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2761): CodeIgniter\Database\BaseConnection->query('TRUNCATE `menu`', null, false)
+ 2 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->truncate()
+ 3 APPPATH\Controllers\Admin.php(70): CodeIgniter\Model->__call('truncate', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-11 09:37:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot truncate a table referenced in a foreign key constraint (`obiadki`.`meals`, CONSTRAINT `meals_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `obiadki`.`menu` (`id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `menu`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `menu`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2761): CodeIgniter\Database\BaseConnection->query('TRUNCATE `menu`', null, false)
+ 4 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->truncate()
+ 5 APPPATH\Controllers\Admin.php(70): CodeIgniter\Model->__call('truncate', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-11 09:37:24 --> [Caused by] mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`obiadki`.`meals`, CONSTRAINT `meals_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `obiadki`.`menu` (`id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('TRUNCATE `menu`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `menu`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `menu`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2761): CodeIgniter\Database\BaseConnection->query('TRUNCATE `menu`', null, false)
+ 5 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->truncate()
+ 6 APPPATH\Controllers\Admin.php(70): CodeIgniter\Model->__call('truncate', [])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:40:05 --> ErrorException: Undefined variable $mealModel
+[Method: POST, Route: admin/updateDateRecords]
+in APPPATH\Controllers\Admin.php on line 68.
+ 1 APPPATH\Controllers\Admin.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $mealModel', 'D:\\Oprogramowanie\\Programy\\XAMPP\\htdocs\\PawBookProject\\app\\Controllers\\Admin.php', 68)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:40:22 --> Error: Class "App\Controllers\DateTime" not found
+[Method: POST, Route: admin/updateDateRecords]
+in APPPATH\Controllers\Admin.php on line 80.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:41:28 --> Error: Class "App\Controllers\DateInterval" not found
+[Method: POST, Route: admin/updateDateRecords]
+in APPPATH\Controllers\Admin.php on line 83.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:43:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-11 09:43:55 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: admin/updateDateRecords]
+in SYSTEMPATH\BaseModel.php on line 1833.
+ 1 SYSTEMPATH\BaseModel.php(1833): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\Admin.php(65): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->updateSystemDate()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-11 09:47:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:47:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:47:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-11 09:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
