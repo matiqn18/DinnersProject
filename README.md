@@ -1,6 +1,7 @@
 # DinnersProject
 
-DinnersProject is a web application designed to manage meals and payments for users. This application allows administrators, accountants, and users to manage meal orders, payments, and system data efficiently.
+
+DinnersProject is a web application created using CodeIgniter 4 designed to manage meals and payments for users. This application allows administrators, accountants, and users to manage meal orders, payments, and system data efficiently.
 
 **Note:** This project is currently in development. Systems for administrators and accountants have been created. The current goal is to develop the user panel, and in the future, improve views by adding CSS.
 
