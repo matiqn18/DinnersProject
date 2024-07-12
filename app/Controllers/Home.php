@@ -11,7 +11,6 @@ class Home extends BaseController
         $this->db = \Config\Database::connect(); // Ładuje bazę danych
     }
 
-
     public function index(): string
     {
         $today = date('Y-m-d');

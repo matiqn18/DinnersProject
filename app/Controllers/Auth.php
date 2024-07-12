@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ClassModel;
 use App\Models\UserModel;
 
 class Auth extends BaseController
@@ -13,7 +14,9 @@ class Auth extends BaseController
 
     public function registerForm()
     {
-        return view('register_form');
+        $classModel = new ClassModel();
+        $data['classes'] = $classModel->findAll();
+        return view('register_form', $data);
     }
 
     public function processRegister()
@@ -48,7 +51,6 @@ class Auth extends BaseController
 
         return $this->redirectToDashboard(2);
     }
-
     public function processLogin()
     {
         $request = service('request');
@@ -75,7 +77,6 @@ class Auth extends BaseController
             return redirect()->back()->with('error', 'Niepoprawna nazwa użytkownika, adres e-mail lub hasło.');
         }
     }
-
     public function logout()
     {
         $session = session();

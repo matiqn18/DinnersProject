@@ -2,17 +2,152 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
+use App\Models\MealModel;
+use App\Models\MenuModel;
+use App\Models\PaymentModel;
+use App\Models\SystemDataModel;
+use App\Models\UserModel;
 
 class User extends BaseController
 {
     protected $filters = [
         'user_auth' => [],
     ];
-
     public function index()
     {
-        return view('accountant_main');
+        return view('user_main');
     }
+    public function profile()
+    {
+        $session = session();
+        $userId = $session->get('userId');
 
+        $userModel = new UserModel();
+        $mealModel = new MealModel();
+        $paymentModel = new PaymentModel();
+        $systemDataModel = new SystemDataModel();
+
+        $user = $userModel->find($userId);
+
+        $orderedMeals = $mealModel->where('user_id', $userId)->countAllResults();
+
+        $systemData = $systemDataModel->find();
+        $pricePerMeal = $systemData[0]['price'];
+
+        $payments = $paymentModel->where('user_id', $userId)->findAll();
+        $totalPayments = 0;
+
+        foreach ($payments as $payment) {
+            $totalPayments += $payment['payment_amount'];
+        }
+        $totalPaidMeals = $totalPayments / $pricePerMeal;
+        
+
+        return view('user_profile', [
+            'user' => $user,
+            'orderedMeals' => $orderedMeals,
+            'totalPaidAmount' => $totalPaidMeals,
+        ]);
+    }
+    public function showOrder($startIndex = null)
+    {
+        $session = session();
+        $userId = $session->get('userId');
+
+        $menuModel = new MenuModel();
+        $mealModel = new MealModel();
+
+        $months = $menuModel->distinctMonths();
+
+        if ($startIndex === null) {
+            $currentMonth = date('Y-m');
+            foreach ($months as $index => $month) {
+                if ($month['month'] == $currentMonth) {
+                    $startIndex = $index;
+                    break;
+                }
+            }
+//            echo "Current Month: $currentMonth<br>";
+//            echo "Start Index: $startIndex<br>";
+//            var_dump($months);
+        } else {
+            if (!isset($months[$startIndex])) {
+                $startIndex = 0;
+            }
+        }
+
+        $currentMonth = $months[$startIndex]['month'];
+
+        $menu = $menuModel->findByRange($months, $startIndex, 1);
+
+        $userMeals = $mealModel->where('user_id', $userId)->findAll();
+
+        $userMealIds = array_column($userMeals, 'menu_id');
+
+        return view('user_order', [
+            'months' => $months,
+            'menu' => $menu,
+            'userMealIds' => $userMealIds,
+            'currentMonth' => $currentMonth,
+            'currentIndex' => $startIndex,
+        ]);
+    }
+    public function changeMonth($direction, $currentIndex)
+    {
+        $menuModel = new MenuModel();
+
+        $months = $menuModel->distinctMonths();
+
+        if ($direction == 'next' && $currentIndex < count($months) - 1) {
+            $currentIndex++;
+        } elseif ($direction == 'prev' && $currentIndex > 0) {
+            $currentIndex--;
+        }
+
+        return redirect()->to(base_url('/user/order/' . $currentIndex));
+    }
+    public function saveOrder()
+    {
+        $session = session();
+        $userId = $session->get('userId');
+        $mealModel = new MealModel();
+        $menuModel = new MenuModel();
+
+        $orderedMeals = $this->request->getPost('meals');
+
+        $currentMeals = $mealModel->where('user_id', $userId)->findAll();
+
+        foreach ($currentMeals as $meal) {
+            $menu = $menuModel->find($meal['menu_id']);
+            if ($menu && $menu['available'] == 1) {
+                $mealModel->delete($meal['id']);
+            }
+        }
+
+        if ($orderedMeals) {
+            $data = [];
+            foreach ($orderedMeals as $menuId) {
+                $menu = $menuModel->find($menuId);
+                if ($menu && $menu['available'] == 1) {
+                    $data[] = [
+                        'user_id' => $userId,
+                        'menu_id' => $menuId,
+                    ];
+                }
+            }
+            if (!empty($data)) {
+                $mealModel->insertBatch($data);
+            }
+        }
+        return redirect()->to(base_url('/user/order/'));
+    }
+    private function paymentsSummary()
+    {
+        $paymentModel = new PaymentModel();
+        $userId = session()->get('userId');
+
+        $totalPayments = $paymentModel->where('user_id', $userId)->sum('payment_amount');
+
+        return $totalPayments;
+    }
 }

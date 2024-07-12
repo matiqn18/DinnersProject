@@ -99,7 +99,7 @@ class Admin extends BaseController
                     $menuRecord = [
                         'date' => $date->format('Y-m-d'),
                         'available' => 0,
-                        'ingredients' => '-'
+                        'ingredients' => ""
                     ];
                     $menuModel->insert($menuRecord);
                 }
