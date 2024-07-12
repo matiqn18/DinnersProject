@@ -10,6 +10,7 @@ $routes->get('/login', 'Auth::loginForm');
 $routes->get('/register', 'Auth::registerForm');
 $routes->get('/user_panel', 'UserPanelController::index');
 $routes->get('/logout', 'Auth::logout');
+$routes->get('/forgotpass', 'Auth::forgotpass');
 
 
 

@@ -18,12 +18,19 @@ class Auth extends BaseController
         $data['classes'] = $classModel->findAll();
         return view('register_form', $data);
     }
+    public function forgotpass()
+    {
+        return view('password_forgot');
+    }
 
     public function processRegister()
     {
         $request = service('request');
 
         $username = $request->getPost('username');
+        $name = $request->getPost('name');
+        $surname = $request->getPost('surname');
+        $class = $request->getPost('class');
         $email = $request->getPost('email');
         $password = $request->getPost('password');
 
@@ -42,14 +49,26 @@ class Auth extends BaseController
 
         $userData = [
             'username' => $username,
+            'name' => $name,
+            'surname' => $surname,
+            'class_id' => $class,
             'password' => password_hash($password, PASSWORD_DEFAULT),
             'email' => $email,
             'role' => 2
         ];
 
         $userModel->insert($userData);
+        $userId = $userModel->insertID();
 
-        return $this->redirectToDashboard(2);
+        $session = session();
+        $session->set([
+            'isLoggedIn' => true,
+            'userId' => $userId,
+            'username' => $username,
+            'email' => $email,
+            'role' => 2,
+        ]);
+        return $this->redirectToDashboard("2");
     }
     public function processLogin()
     {
@@ -83,6 +102,7 @@ class Auth extends BaseController
         $session->destroy();
         return redirect()->to(base_url())->with('success', 'Wylogowano pomyślnie.');
     }
+
     private function redirectToDashboard($role)
     {
         return match ($role) {
