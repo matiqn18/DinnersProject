@@ -6,14 +6,13 @@
     <title>Formularz Logowania</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('main_style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('back_button.css'); ?>">
+
 </head>
 <body>
 <style>
     body {
-        background: url('<?php echo base_url('1.png'); ?>') no-repeat center center fixed;
-        background-size: cover;
-        margin: 0;
-        padding: 0;
+
     }
 </style>
 

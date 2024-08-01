@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\ClassModel;
 use App\Models\UserModel;
 use App\Models\MealModel;
 use App\Models\MenuModel;
@@ -61,7 +62,8 @@ class Accountant extends BaseController
         $html = view('pdf_template', ['dailyOrders' => $dailyOrders, 'date' => $date]); // Twój szablon PDF
         $pdf->loadHtml($html);
         $pdf->render();
-        $pdf->stream('daily_orders.pdf');
+        $filename = 'daily_orders_'.$date.'.pdf';
+        $pdf->stream($filename);
 
         exit();
     }
@@ -172,11 +174,13 @@ class Accountant extends BaseController
         $mealModel = new MealModel();
         $paymentModel = new PaymentModel();
         $systemDataModel = new SystemDataModel();
+        $classModel = new ClassModel();
 
         $systemData = $systemDataModel->first();
         $mealPrice = $systemData['price'];
 
-        $users = $userModel->where('role', '2')->findAll();
+//        $users = $userModel->where('role', '2')->findAll();
+        $users = $userModel->getUserWithClass(2);
 
         $userData = [];
 
@@ -189,7 +193,10 @@ class Accountant extends BaseController
             $userData[] = [
                 'id' => $user['id'],
                 'username' => $user['username'],
+                'name' => $user['name'],
+                'surname' => $user['surname'],
                 'email' => $user['email'],
+                'class_name' => $user['class_name'],
                 'meal_count' => $mealCount,
                 'total_meal_cost' => $totalMealCost,
                 'total_payments' => $totalPayments,

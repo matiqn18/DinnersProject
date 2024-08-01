@@ -9,12 +9,6 @@
 </head>
 <body>
 <style>
-    body {
-        background: url('<?php echo base_url('1.png'); ?>') no-repeat center center fixed;
-        background-size: cover;
-        margin: 0;
-        padding: 0;
-    }
 </style>
 <main>
     <div class="menu-links">

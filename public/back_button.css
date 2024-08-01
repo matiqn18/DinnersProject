@@ -1,0 +1,18 @@
+.close-btn {
+    background-color: #14452f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #0e3723;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

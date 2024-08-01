@@ -1,11 +1,11 @@
-<!-- pdf_template.php -->
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <title>Daily Orders PDF</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>PDF dzienne zamówienia <?= esc($date) ?></title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: DejaVu Sans, serif;
         }
         h1, h2 {
             margin-bottom: 10px;
@@ -20,17 +20,17 @@
     </style>
 </head>
 <body>
-<h1>Daily Orders for <?= esc($date) ?></h1>
+<h1>Zamówienia na dzień: <?= esc($date) ?></h1>
 
 <?php foreach ($dailyOrders as $order): ?>
     <h2>Menu: <?= esc($order['menu']['ingredients']) ?> (<?= esc($order['menu']['date']) ?>)</h2>
     <ul>
         <?php if (!empty($order['users'])): ?>
             <?php foreach ($order['users'] as $user): ?>
-                <li><?= esc($user['username']) ?> (<?= esc($user['email']) ?>)</li>
+                <li><?= esc($user['name'])." ".esc($user['surname']) ?> (<?= esc($user['email']) ?>)</li>
             <?php endforeach; ?>
         <?php else: ?>
-            <li>No orders for this menu item.</li>
+            <li>Brak zamówień.</li>
         <?php endif; ?>
     </ul>
 <?php endforeach; ?>

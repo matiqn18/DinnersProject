@@ -1,0 +1,149 @@
+body {
+    background-color: transparent;
+}
+
+.but_table {
+    background-color: #14452f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+.but_table:hover {
+    background-color: #0e3723;
+}
+
+/* Wyśrodkowanie kontenera z paginacją i formularzem */
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination {
+    margin: 20px 0;
+    text-align: center; /* Wyśrodkowanie linków paginacji */
+}
+
+.pagination a {
+    margin: 0 5px;
+    color: #14452f;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    font-weight: bold;
+    background-color: #14452f;
+    color: white;
+}
+
+.month-navigation a {
+    margin: 0 10px;
+    color: #14452f;
+    text-decoration: none;
+}
+
+.table th, .table td {
+    text-align: center; /* Ustawienie wyrównania tekstu w tabeli */
+}
+
+.table .col-date,
+.table .col-availability,
+.table .col-actions {
+    width: 12%;
+}
+
+.table .col-ingredients {
+    width: 75%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #14452f;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: #14452f;
+    margin-top: 20px;
+}
+h2 {
+    color: #14452f;
+    margin: 20px 0 10px;
+}
+.dateform {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+form input[type="date"], textarea {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    width: 200px;
+}
+form button,form a {
+    background-color: #14452f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+form button:hover,form a:hover {
+    background-color: #0e3723;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+p {
+    text-align: center;
+    color: #333;
+}
+
+.editform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+}
+.search-container {
+    margin-bottom: 20px;
+}
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
