@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="<?php echo base_url('main_style.css'); ?>">
     <style>
         body {
-            background: url('<?php echo base_url('1.png'); ?>') no-repeat center center fixed;
-            background-size: cover;
             height: 100vh;
+
         }
         #main-container {
             display: flex;

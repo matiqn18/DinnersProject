@@ -45,8 +45,10 @@ $routes->group('accountant', ['filter' => 'accountant_auth'], function($routes) 
 
 $routes->group('user', ['filter' => 'user_auth'], function($routes) {
     $routes->get('/', 'User::index');
-    $routes->get('order/(:num)', 'User::showOrder/$1');
-    $routes->get('order', 'User::showOrder');
+    $routes->get('order/(:num)', 'User::showOrder/1/$1');
+    $routes->get('order', 'User::showOrder/1');
+    $routes->get('order_mobile', 'User::showOrder/0');
+    $routes->get('order_mobile/(:num)', 'User::showOrder/0/$1');
     $routes->post('save', 'User::saveOrder');
     $routes->get('changeMonth/(:any)/(:num)', 'User::changeMonth/$1/$2');
     $routes->get('info', 'User::profile');

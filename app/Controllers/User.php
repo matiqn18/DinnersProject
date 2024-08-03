@@ -49,7 +49,7 @@ class User extends BaseController
             'totalPaidAmount' => $totalPaidMeals,
         ]);
     }
-    public function showOrder($startIndex = null)
+    public function showOrder($option, $startIndex = null)
     {
         $session = session();
         $userId = $session->get('userId');
@@ -84,13 +84,24 @@ class User extends BaseController
 
         $userMealIds = array_column($userMeals, 'menu_id');
 
-        return view('user_order', [
-            'months' => $months,
-            'menu' => $menu,
-            'userMealIds' => $userMealIds,
-            'currentMonth' => $currentMonth,
-            'currentIndex' => $startIndex,
-        ]);
+        if ($option ==1){
+            return view('user_order', [
+                'months' => $months,
+                'menu' => $menu,
+                'userMealIds' => $userMealIds,
+                'currentMonth' => $currentMonth,
+                'currentIndex' => $startIndex,
+            ]);
+        }
+        else {
+            return view('user_order_mobile', [
+                'months' => $months,
+                'menu' => $menu,
+                'userMealIds' => $userMealIds,
+                'currentMonth' => $currentMonth,
+                'currentIndex' => $startIndex,
+            ]);
+        }
     }
     public function changeMonth($direction, $currentIndex)
     {
