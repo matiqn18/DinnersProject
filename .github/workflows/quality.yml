@@ -3,7 +3,7 @@ name: Code quality
 on:
   push:
     branches:
-      - master
+      # - master
 
 permissions:
   checks: write
