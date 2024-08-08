@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 
+use App\Models\ClassModel;
 use App\Models\MealModel;
 use App\Models\MenuModel;
 use App\Models\PaymentModel;
@@ -21,8 +22,13 @@ class Admin extends BaseController
 
     public function index()
     {
+        return view('admin_main');
+    }
+
+    public function users()
+    {
         $userModel = new UserModel();
-        $users = $userModel->where('role', 2)->findAll();
+        $users = $userModel->getUserWithClass(2);
         $accountants = $userModel->where('role', 1)->findAll();
         $admins = $userModel->where('role', 0)->findAll();
 
@@ -33,10 +39,10 @@ class Admin extends BaseController
         ];
         return view('admin_panel', $data);
     }
-
     public function systemData()
     {
         $systemModel = new SystemDataModel();
+
         $query = $systemModel->find();
         $data = [
             'startdate' => $query[0]["startdate"],
@@ -107,14 +113,16 @@ class Admin extends BaseController
         }
 
 
-        return redirect()->to(base_url('admin'))->with('success', 'Dane systemowe zaktualizowane pomyślnie.');
+        return redirect()->to(base_url('admin/users'))->with('success', 'Dane systemowe zaktualizowane pomyślnie.');
 
     }
 
     public function edit($id)
     {
         $userModel = new UserModel();
+        $classModel = new ClassModel();
         $data['user'] = $userModel->find($id);
+        $data['class'] = $classModel->findAll();
 
         return view('edit_user', $data);
     }
@@ -124,8 +132,11 @@ class Admin extends BaseController
         $userModel = new UserModel();
         $data = [
             'username' => $this->request->getPost('username'),
+            'name' => $this->request->getPost('name'),
+            'surname' => $this->request->getPost('surname'),
             'email' => $this->request->getPost('email'),
             'role' => $this->request->getPost('role'),
+            'class_id' => $this->request->getPost('class')
         ];
 
         if ($this->request->getPost('password')) {
@@ -134,7 +145,7 @@ class Admin extends BaseController
 
         $userModel->update($id, $data);
 
-        return redirect()->to(base_url('admin'))->with('success', 'Użytkownik zaktualizowany pomyślnie.');
+        return redirect()->to(base_url('admin/users'))->with('success', 'Użytkownik zaktualizowany pomyślnie.');
     }
 
     public function updatePrice()
@@ -142,7 +153,7 @@ class Admin extends BaseController
         $priceModel = new SystemDataModel();
         $price = $this->request->getPost('price');
         $priceModel->updatePrice($price);
-        return redirect()->to(base_url('admin'))->with('success', 'Cena Obiadu została zaktualizowana.');
+        return redirect()->to(base_url('admin/users'))->with('success', 'Cena Obiadu została zaktualizowana.');
     }
 
     public function delete($id)
@@ -150,6 +161,6 @@ class Admin extends BaseController
         $userModel = new UserModel();
         $userModel->delete($id);
 
-        return redirect()->to(base_url('admin'))->with('success', 'Użytkownik usunięty pomyślnie.');
+        return redirect()->to(base_url('admin/users'))->with('success', 'Użytkownik usunięty pomyślnie.');
     }
 }

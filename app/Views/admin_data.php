@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <!-- Dodaj tutaj linki do stylów CSS, jeśli są wymagane -->
 </head>
 <body>
 <h1>Panel Administracyjny</h1>
 <a href="<?= base_url('admin') ?>">Powrót</a>
 
 
-<!-- Formularz do zarządzania rekordami dotyczącymi daty -->
 <form action="<?php echo base_url('admin/updateDateRecords'); ?>" method="post">
         <label for="startDate">Data rozpoczęcia:</label>
         <input type="date" id="startDate" name="startDate" value="<?php echo $startdate; ?>">

@@ -18,7 +18,7 @@ function getDayName($date) {
 <body style="margin: 0;">
 <main class="container mt-4">
     <h1>Zamawianie posiłków</h1>
-    <h2>Miesiąc: <?= $currentMonth ?></h2>
+    <h2>Miesiąc: <?= $currentMonthFull ?></h2>
     <a href="<?= base_url('user/changeMonth/prev/' . $currentIndex) ?>"
        class="but_table"
         <?= $currentIndex == 0 ? 'style="pointer-events: none; color: gray;"' : '' ?>>

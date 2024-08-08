@@ -13,10 +13,12 @@ class User extends BaseController
     protected $filters = [
         'user_auth' => [],
     ];
+
     public function index()
     {
         return view('user_main');
     }
+
     public function profile()
     {
         $session = session();
@@ -41,7 +43,6 @@ class User extends BaseController
             $totalPayments += $payment['payment_amount'];
         }
         $totalPaidMeals = $totalPayments / $pricePerMeal;
-        
 
         return view('user_profile', [
             'user' => $user,
@@ -49,6 +50,7 @@ class User extends BaseController
             'totalPaidAmount' => $totalPaidMeals,
         ]);
     }
+
     public function showOrder($option, $startIndex = null)
     {
         $session = session();
@@ -67,9 +69,6 @@ class User extends BaseController
                     break;
                 }
             }
-//            echo "Current Month: $currentMonth<br>";
-//            echo "Start Index: $startIndex<br>";
-//            var_dump($months);
         } else {
             if (!isset($months[$startIndex])) {
                 $startIndex = 0;
@@ -77,32 +76,48 @@ class User extends BaseController
         }
 
         $currentMonth = $months[$startIndex]['month'];
-
         $menu = $menuModel->findByRange($months, $startIndex, 1);
 
         $userMeals = $mealModel->where('user_id', $userId)->findAll();
-
         $userMealIds = array_column($userMeals, 'menu_id');
 
-        if ($option ==1){
-            return view('user_order', [
-                'months' => $months,
-                'menu' => $menu,
-                'userMealIds' => $userMealIds,
-                'currentMonth' => $currentMonth,
-                'currentIndex' => $startIndex,
-            ]);
+        $currentMonthNumber = intval(date('m', strtotime($currentMonth)));
+        $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $currentMonthNumber, date('Y', strtotime($currentMonth)));
+        $firstDayOfMonth = date('N', strtotime($currentMonth . '-01'));
+
+        $days = [];
+        for ($day = 1; $day <= $daysInMonth; $day++) {
+            $date = date('Y-m-d', strtotime("$currentMonth-$day"));
+            $days[$date] = ['date' => $date, 'ingredients' => '', 'id' => null, 'available' => false];
         }
-        else {
-            return view('user_order_mobile', [
-                'months' => $months,
-                'menu' => $menu,
-                'userMealIds' => $userMealIds,
-                'currentMonth' => $currentMonth,
-                'currentIndex' => $startIndex,
-            ]);
+
+        foreach ($menu as $item) {
+            $date = $item['date'];
+            if (isset($days[$date])) {
+                $days[$date]['ingredients'] = $item['ingredients'];
+                $days[$date]['id'] = $item['id'];
+                $days[$date]['available'] = $item['available'] == 1;
+            }
+        }
+
+        $viewData = [
+            'months' => $months,
+            'menu' => $menu,
+            'userMealIds' => $userMealIds,
+            'currentMonth' => $currentMonth,
+            'currentIndex' => $startIndex,
+            'currentMonthFull' => $this->FullMonthPrint($currentMonthNumber),
+            'days' => $days,
+            'firstDayOfMonth' => $firstDayOfMonth,
+        ];
+
+        if ($option == 1) {
+            return view('user_order', $viewData);
+        } else {
+            return view('user_order_mobile', $viewData);
         }
     }
+
     public function changeMonth($direction, $currentIndex)
     {
         $menuModel = new MenuModel();
@@ -117,6 +132,7 @@ class User extends BaseController
 
         return redirect()->to(base_url('/user/order/' . $currentIndex));
     }
+
     public function saveOrder()
     {
         $session = session();
@@ -152,6 +168,7 @@ class User extends BaseController
         }
         return redirect()->to(base_url('/user/order/'));
     }
+
     private function paymentsSummary()
     {
         $paymentModel = new PaymentModel();
@@ -160,5 +177,13 @@ class User extends BaseController
         $totalPayments = $paymentModel->where('user_id', $userId)->sum('payment_amount');
 
         return $totalPayments;
+    }
+
+    private function FullMonthPrint($month)
+    {
+        $months = ["X", "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień",
+            "Wrzesień", "Październik", "Listopad", "Grudzień"];
+
+        return $months[$month];
     }
 }

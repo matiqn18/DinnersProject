@@ -6,15 +6,12 @@
     <title>Zamawianie posiłków</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('inframe_style.css'); ?>">
-    <style>
-
-    </style>
 </head>
 <body>
 <main class="container mt-4">
     <h1>Zamawianie posiłków</h1>
-    <h2>Miesiąc: <?= htmlspecialchars($currentMonth) ?></h2>
-    <form method="post" action="<?= base_url('user/save') ?>">
+    <h2>Miesiąc: <?= htmlspecialchars($currentMonthFull) ?></h2>
+    <form method="post" action="<?= base_url('user/saveOrder') ?>">
         <div class="calendar">
             <div class="calendar-day weekend">Pon</div>
             <div class="calendar-day weekend">Wt</div>
@@ -25,27 +22,6 @@
             <div class="calendar-day weekend">Nd</div>
 
             <?php
-            $daysInMonth = cal_days_in_month(CAL_GREGORIAN, date('m', strtotime($currentMonth)), date('Y', strtotime($currentMonth)));
-            $firstDayOfMonth = date('N', strtotime($currentMonth . '-01'));
-
-            // Generate all days of the month
-            $days = [];
-            for ($day = 1; $day <= $daysInMonth; $day++) {
-                $date = date('Y-m-d', strtotime("$currentMonth-$day"));
-                $days[$date] = ['date' => $date, 'ingredients' => '', 'id' => null, 'available' => false];
-            }
-
-            // Populate days from menu
-            foreach ($menu as $item) {
-                $date = $item['date'];
-                if (isset($days[$date])) {
-                    $days[$date]['ingredients'] = $item['ingredients'];
-                    $days[$date]['id'] = $item['id'];
-                    $days[$date]['available'] = $item['available'] == 1;
-
-                }
-            }
-
             // Print empty days before the first day of the month
             for ($i = 1; $i < $firstDayOfMonth; $i++): ?>
                 <div class="calendar-day empty"></div>
@@ -66,14 +42,6 @@
                     <div class="menu"><?= htmlspecialchars($day['ingredients']) ?></div>
                 </label>
             <?php endforeach; ?>
-
-            <!-- Print empty days after the last day of the month -->
-            <?php
-            $totalCells = $firstDayOfMonth + $daysInMonth;
-            $extraCells = (7 - ($totalCells % 7)) % 7;
-            for ($i = 0; $i < $extraCells; $i++): ?>
-                <div class="calendar-day empty"></div>
-            <?php endfor; ?>
         </div>
         <button type="submit" class="but_table">Zapisz</button>
         <a href="<?= base_url('user/changeMonth/prev/' . $currentIndex) ?>"
