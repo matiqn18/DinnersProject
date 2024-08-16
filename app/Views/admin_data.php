@@ -7,8 +7,6 @@
 </head>
 <body>
 <h1>Panel Administracyjny</h1>
-<a href="<?= base_url('admin') ?>">Powrót</a>
-
 
 <form action="<?php echo base_url('admin/updateDateRecords'); ?>" method="post">
         <label for="startDate">Data rozpoczęcia:</label>

@@ -15,7 +15,7 @@ class Auth extends BaseController
     public function registerForm()
     {
         $classModel = new ClassModel();
-        $data['classes'] = $classModel->findAll();
+        $data['classes'] = $classModel->where('available', 1)->findAll();
         return view('register_form', $data);
     }
     public function forgotpass()

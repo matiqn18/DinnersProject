@@ -20,12 +20,12 @@ class Admin extends BaseController
         'admin_auth' => [],
     ];
 
-    public function index()
+    public function index(): string
     {
         return view('admin_main');
     }
 
-    public function users()
+    public function users(): string
     {
         $userModel = new UserModel();
         $users = $userModel->getUserWithClass(2);
@@ -39,15 +39,18 @@ class Admin extends BaseController
         ];
         return view('admin_panel', $data);
     }
-    public function systemData()
+    public function systemData(): string
     {
         $systemModel = new SystemDataModel();
+        $classModel = new ClassModel();
 
+        $class = $classModel->orderBy('name', 'ASC')->findAll();
         $query = $systemModel->find();
         $data = [
             'startdate' => $query[0]["startdate"],
             'enddate' => $query[0]["enddate"],
-            'price' => $query[0]["price"]
+            'price' => $query[0]["price"],
+            'class' => $class
         ];
 
         return view('admin_data', $data);
@@ -73,6 +76,10 @@ class Admin extends BaseController
         }
 
         if ($resetTable) {
+
+//            TODO: Tworzenie BACKUP przed usunięciem systemu
+
+
             $menuModel = new MenuModel();
             $mealModel = new MealModel();
             $paymentModel = new PaymentModel();
@@ -117,6 +124,19 @@ class Admin extends BaseController
 
     }
 
+    public function updateClass()
+    {
+        $classModel = new ClassModel();
+
+        $classnum = $classModel->countAllResults();
+
+        for ($i = 1; $i <= $classnum; $i++) {
+            $this->request->getPost('classID'.$i) ;
+            
+        }
+
+
+    }
     public function edit($id)
     {
         $userModel = new UserModel();
