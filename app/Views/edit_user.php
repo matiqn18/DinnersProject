@@ -55,19 +55,27 @@
         }
 
         input[type="submit"] {
-            background-color: #bb86fc;
-            color: #121212;
-            border: none;
+
+
+
+
+            display: inline-block;
             padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-            text-align: center;
+            background-color: #14452f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         input[type="submit"]:hover {
-            background-color: #9f67e4;
+            /*background-color: #0e3723;*/
+            /*transform: scale(1.05);*/
+
+            background-color: #0e3723;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .error-message {
@@ -91,7 +99,6 @@
 </head>
 <body>
 <a href="<?= base_url('admin/users') ?>">Powrót</a>
-<h1>Edit User</h1>
 <?php if (session()->has('error')): ?>
     <div class="error-message">
         <?= session('error') ?>
@@ -105,14 +112,27 @@
         <input type="text" id="name" name="name" value="<?= $user['name'] ?>">
         <label for="surname">Nazwisko:</label>
         <input type="text" id="surname" name="surname" value="<?= $user['surname'] ?>">
+        <?php if (!in_array($user['role'], [0, 1, 3])): ?>
+            <label for="class">Klasa:</label>
+            <select name="class_id" id="class">
+                <option value="">-</option>
+                <?php foreach ($class as $classItem): ?>
+                    <option value="<?= $classItem['id_class']; ?>" <?= (isset($user['class_id']) && $classItem['id_class'] == $user['class_id']) ? 'selected' : ''; ?>>
+                        <?= $classItem['name']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+
+        <?php endif; ?>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" value="<?= $user['email'] ?>">
-
-        <label for="role">Role:</label>
+        <label for="role">Typ użytkownika:</label>
         <select id="role" name="role">
-            <option value="2" <?= $user['role'] == '2' ? 'selected' : '' ?>>User</option>
-            <option value="1" <?= $user['role'] == '1' ? 'selected' : '' ?>>Accountant</option>
-            <option value="0" <?= $user['role'] == '0' ? 'selected' : '' ?>>Admin</option>
+            <option value="2" <?= $user['role'] == '2' ? 'selected' : '' ?>>Uczeń</option>
+            <option value="3" <?= $user['role'] == '3' ? 'selected' : '' ?>>Absolwent</option>
+            <option value="1" <?= $user['role'] == '1' ? 'selected' : '' ?>>Księgowa</option>
+            <option value="0" <?= $user['role'] == '0' ? 'selected' : '' ?>>Administrator</option>
+
         </select>
 
         <label for="password">Password (leave blank to keep current password):</label>

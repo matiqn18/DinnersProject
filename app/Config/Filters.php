@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\GraduatedAuth;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -39,7 +40,9 @@ class Filters extends BaseFilters
         'performance'   => PerformanceMetrics::class,
         'admin_auth'    => AdminAuth::class,
         'accountant_auth' => AccountantAuth::class,
+        'graduated_auth' => GraduatedAuth::class,
         'user_auth'     => UserAuth::class,
+
     ];
 
     /**

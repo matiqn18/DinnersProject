@@ -31,6 +31,7 @@
     <br>
 
     <a class="main_buttons" href="<?php echo base_url('menu'); ?>">Wyświetl jadłospis</a>
+<!--    TODO: Zrobić pdf z drukowaniem planu obiadów na najbliższy miesiąc-->
 </main>
 
 <?php include 'footer.php'; ?>

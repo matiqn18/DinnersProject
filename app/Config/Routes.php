@@ -23,12 +23,13 @@ $routes->post('/login/authenticate', 'Auth::processLogin');
 $routes->group('admin', ['filter' => 'admin_auth'], function($routes) {
     $routes->get('/', 'Admin::index');
     $routes->get('users', 'Admin::users');
-    $routes->get('edit/(:num)', 'Admin::edit/$1');
-    $routes->post('update/(:num)', 'Admin::update/$1');
+    $routes->get('edit/(:num)', 'Admin::editUser/$1');
+    $routes->post('update/(:num)', 'Admin::updateUser/$1');
     $routes->get('delete/(:num)', 'Admin::delete/$1');
     $routes->post('updatePrice', 'Admin::updatePrice');
     $routes->get('data', 'Admin::systemData');
     $routes->post('updateDateRecords', 'Admin::updateSystemDate');
+    $routes->post('updateClassAvailability', 'Admin::updateClass');
 });
 
 $routes->group('accountant', ['filter' => 'accountant_auth'], function($routes) {
@@ -53,4 +54,10 @@ $routes->group('user', ['filter' => 'user_auth'], function($routes) {
     $routes->post('save', 'User::saveOrder');
     $routes->get('changeMonth/(:any)/(:num)', 'User::changeMonth/$1/$2');
     $routes->get('info', 'User::profile');
+    $routes->post('selectClass', 'User::selectClass');
+});
+
+
+$routes->group('graduated', ['filter' => 'graduated_auth'], function($routes) {
+    $routes->get('/', 'Graduated::index');
 });

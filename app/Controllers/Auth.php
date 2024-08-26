@@ -81,6 +81,13 @@ class Auth extends BaseController
         $user = $userModel->where('username', $usernameOrEmail)->orWhere('email', $usernameOrEmail)->first();
 
         if ($user && password_verify($password, $user['password'])) {
+            if ($user['class_id'] == 1002) {
+                $userModel->update($user['id'], [
+                    'class_id' => null,
+                    'role' => 3
+                ]);
+                $user['role'] = 3;
+            }
             $session = session();
             $session->set([
                 'isLoggedIn' => true,
@@ -109,6 +116,7 @@ class Auth extends BaseController
             '0' => redirect()->to(base_url('admin')),
             '1' => redirect()->to(base_url('accountant')),
             '2' => redirect()->to(base_url('user')),
+            '3' => redirect()->to(base_url('graduated')),
             default => redirect()->to(base_url())->with('error', 'Nieprawidłowa rola użytkownika.'),
         };
     }

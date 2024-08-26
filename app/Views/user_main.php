@@ -11,6 +11,7 @@
             height: 100vh;
             margin: 0;
             font-family: 'Roboto', sans-serif;
+            position: relative;
         }
         #main-container {
             display: flex;
@@ -24,6 +25,8 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             box-sizing: border-box;
+            position: relative;
+            z-index: 1;
         }
         #navigation {
             display: flex;
@@ -52,6 +55,46 @@
             height: 100%;
             border: none;
         }
+
+        /* Stylizacja modalu */
+        #class-selection-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
+        }
+        #modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 80%;
+        }
+        #modal-content h2 {
+            margin-bottom: 20px;
+        }
+        #modal-content select, #modal-content button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+        }
+        #modal-content button {
+            background-color: #14452f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #modal-content button:hover {
+            background-color: #0e3723;
+        }
     </style>
 </head>
 <body>
@@ -63,6 +106,24 @@
     </div>
     <iframe id="content"></iframe>
 </div>
+
+<!-- Modal do wyboru klasy -->
+<div id="class-selection-modal">
+    <div id="modal-content">
+        <h2>Gratulujemy! Wybierz swoją nową klasę</h2>
+        <form action="<?php echo base_url('user/selectClass'); ?>" method="post">
+            <select name="selected_class" required>
+                <?php foreach ($class as $classItem): ?>
+                    <option value="<?php echo $classItem['id_class']; ?>">
+                        <?php echo $classItem['name']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit">Wybierz klasę</button>
+        </form>
+    </div>
+</div>
+
 <?php include 'footer.php'; ?>
 <script>
     function loadContent(url) {
@@ -80,6 +141,12 @@
 
     document.addEventListener('DOMContentLoaded', function() {
         loadContent();
+
+        // Sprawdzenie zmiennej `class` i wyświetlenie modalu
+        const classData = <?php echo json_encode($class); ?>;
+        if (classData.length > 0) {
+            document.getElementById('class-selection-modal').style.display = 'flex';
+        }
     });
 </script>
 </body>

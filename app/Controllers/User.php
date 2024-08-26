@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ClassModel;
 use App\Models\MealModel;
 use App\Models\MenuModel;
 use App\Models\PaymentModel;
@@ -16,9 +17,31 @@ class User extends BaseController
 
     public function index()
     {
+        $userModel = new UserModel();
+        $classModel = new ClassModel();
+
+        $record = $userModel->where('id', $_SESSION['userId'])->first();
+
+        if ($record) {
+            $class = [];
+
+            switch ($record['class_id']) {
+                case 1001:
+                    $class = $classModel->groupStart()
+                        ->like('name', 'LO_1')
+                        ->orLike('name', 'TE_1')
+                        ->groupEnd()
+                        ->findAll();
+                    break;
+
+                case 1000:
+                    $class = $classModel->like('name', 'SP_4')->findAll();
+                    break;
+            }
+            return view('user_main', ['class' => $class]);
+        }
         return view('user_main');
     }
-
     public function profile()
     {
         $session = session();
@@ -49,6 +72,18 @@ class User extends BaseController
             'orderedMeals' => $orderedMeals,
             'totalPaidAmount' => $totalPaidMeals,
         ]);
+    }
+
+    public function selectClass()
+    {
+        $userModel = new UserModel();
+        $session = session();
+        $userId = $session->get('userId');
+        $selectedClass = $this->request->getPost('selected_class');
+
+        $userModel->update($userId, ['class_id' => $selectedClass]);
+
+        return redirect()->to(base_url('/user'))->with('success', 'Klasa została zaktualizowana.');
     }
 
     public function showOrder($option, $startIndex = null)
