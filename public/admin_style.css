@@ -1,0 +1,275 @@
+/* Globalne style */
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent; /* Bez tła */
+}
+
+a {
+    color: #bb86fc;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    color: #bb86fc;
+    margin-top: 20px;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+/* Formularze i przyciski */
+.form-container, form {
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+label {
+    color: white;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select,
+input[type="date"], input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: #2c2c2c;
+    color: #e0e0e0;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+input[type="submit"], .navigator, button, .action-link {
+    background-color: #14452f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+input[type="submit"]:hover, .navigator:hover, button:hover, .action-link:hover {
+    background-color: #0e3723;
+    transform: scale(1.05);
+}
+
+input[type="submit"]:focus, .navigator:focus, button:focus, .action-link:focus {
+    outline: none;
+}
+
+/* Tabele */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto 20px;
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #333;
+}
+
+th {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #1e1e1e;
+}
+
+tr:nth-child(odd) {
+    background-color: #2c2c2c;
+}
+
+/* Komunikaty o błędach i sukcesie */
+.error-message {
+    color: red;
+    margin: 20px 0;
+}
+
+.success-message {
+    color: green;
+    margin: 20px 0;
+}
+
+/* Przyciski nawigacyjne i linki */
+.pagination-links {
+    margin-top: 20px;
+}
+
+.pagination-links a {
+    background-color: #bb86fc;
+    color: #121212;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+.pagination-links a.disabled {
+    background-color: gray;
+    color: #ccc;
+    pointer-events: none;
+}
+
+.pagination-links a:hover {
+    background-color: #9f67e4;
+}
+
+/* Formularze wyszukiwania */
+.search-form {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    background-color: transparent;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: #bb86fc;
+    color: #121212;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #9f67e4;
+}
+
+/* Style paneli */
+.panel {
+    display: none;
+}
+
+.panel.active {
+    display: block;
+}
+
+/* Przycisk przełączający */
+.toggle-button {
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.toggle-button:hover {
+    text-decoration: underline;
+}
+
+/* Nagłówki sekcji */
+.section-header {
+    background-color: #14452f;
+    padding: 10px;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Tabele klas */
+.class-table {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.class-table div {
+    background-color: #333;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: left;
+}
+
+.class-table.sp div {
+    width: calc(20% - 10px); /* 4 kolumny */
+}
+
+.class-table.lo div {
+    width: calc(25% - 10px); /* 3 kolumny */
+}
+
+.class-table.tech div {
+    width: calc(40% - 10px); /* 2 kolumny */
+}
+
+.class-table div label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.class-table div label input {
+    margin-left: 10px;
+}
+
+/* Checkboxy i etykiety */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px; /* Odstęp między checkboxem a etykietą */
+}
+
+/* Responsywność */
+@media (max-width: 600px) {
+    input[type="text"], input[type="email"], input[type="password"], select {
+        width: calc(100% - 16px);
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    input[type="submit"], .navigator, button, .action-link {
+        width: 100%;
+        padding: 12px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

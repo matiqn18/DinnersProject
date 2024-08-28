@@ -43,6 +43,8 @@
                 </label>
             <?php endforeach; ?>
         </div>
+        <button type="button" class="but_table" id="select-all-available">Zaznacz wszystkie dostępne</button>
+
         <button type="submit" class="but_table">Zapisz</button>
         <a href="<?= base_url('user/changeMonth/prev/' . $currentIndex) ?>"
            class="but_table"
@@ -57,11 +59,21 @@
     </form>
 </main>
 <script>
-    document.querySelectorAll('.calendar-day').forEach(day => {
-        day.addEventListener('click', function () {
-            const checkbox = this.querySelector('input[type="checkbox"]');
+    // document.querySelectorAll('.calendar-day').forEach(day => {
+    //     day.addEventListener('click', function () {
+    //         const checkbox = this.querySelector('input[type="checkbox"]');
+    //         if (checkbox && !checkbox.disabled) {
+    //             checkbox.checked = !checkbox.checked;
+    //         }
+    //     });
+    // });
+
+    // Function to check all available checkboxes
+    document.getElementById('select-all-available').addEventListener('click', function() {
+        document.querySelectorAll('.calendar-day').forEach(day => {
+            const checkbox = day.querySelector('input[type="checkbox"]');
             if (checkbox && !checkbox.disabled) {
-                checkbox.checked = !checkbox.checked;
+                checkbox.checked = true;
             }
         });
     });

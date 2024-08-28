@@ -4,166 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
+    <link rel="stylesheet" href="<?php echo base_url('admin_style.css'); ?>">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            color: #e0e0e0;
-        }
 
-        a {
-            color: #bb86fc;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        h1, h2 {
-            color: #bb86fc;
-            margin-top: 20px;
-        }
-
-        h2 {
-            margin-top: 40px;
-        }
-
-        table {
-            width: 90%;
-            border-collapse: collapse;
-            margin: 20px auto;
-            background: #1e1e1e;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid #333;
-        }
-
-        th {
-            background-color: #333;
-            color: #e0e0e0;
-        }
-
-        tr:nth-child(even) {
-            background-color: #1e1e1e;
-        }
-
-        tr:nth-child(odd) {
-            background-color: #2c2c2c;
-        }
-
-        .success-message {
-            color: green;
-            margin: 20px 0;
-        }
-
-        button, .action-link {
-            background-color: #14452f;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin: 10px 5px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        button:hover, .action-link:hover {
-            background-color: #0e3723;
-        }
-
-        .pagination-links {
-            margin-top: 20px;
-        }
-
-        .pagination-links a {
-            background-color: #bb86fc;
-            color: #121212;
-            padding: 10px 15px;
-            border-radius: 4px;
-            text-decoration: none;
-            margin: 0 5px;
-            font-size: 16px;
-        }
-
-        .pagination-links a.disabled {
-            background-color: gray;
-            color: #ccc;
-            pointer-events: none;
-        }
-
-        .pagination-links a:hover {
-            background-color: #9f67e4;
-        }
-
-        @media (max-width: 600px) {
-            table, th, td {
-                font-size: 14px;
-                padding: 8px;
-            }
-
-            button, .action-link {
-                width: 100%;
-                padding: 12px;
-            }
-        }
-
-        .search-form {
-            margin-bottom: 20px;
-        }
-
-        .search-form input[type="text"] {
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            margin-right: 10px;
-        }
-
-        .search-form button {
-            padding: 10px 20px;
-            border-radius: 4px;
-            border: none;
-            background-color: #bb86fc;
-            color: #121212;
-            cursor: pointer;
-        }
-
-        .search-form button:hover {
-            background-color: #9f67e4;
-        }
-
-        .panel {
-            display: none;
-        }
-
-        .panel.active {
-            display: block;
-        }
-        .search-input {
-            width: 80%;
-        }
-
-        .toggle-button {
-            cursor: pointer;
-            color: white;
-            background: none;
-            border: none;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-
-        .toggle-button:hover {
-            text-decoration: underline;
-        }
     </style>
     <script>
         function filterTable(tableId, searchFieldId) {
@@ -231,7 +74,7 @@
                 <td><?= $user['email'] ?></td>
                 <td>
                     <a href="<?= base_url('admin/edit/'.$user['id']) ?>" class="action-link">Edit</a>
-                    <a href="<?= base_url('admin/delete/'.$user['id']) ?>" class="action-link" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                    <a href="<?= base_url('admin/delete/'.$user['id']) ?>" class="action-link" style="background-color: darkred; color: white" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -261,7 +104,7 @@
                 <td><?= $user['email'] ?></td>
                 <td>
                     <a href="<?= base_url('admin/edit/'.$user['id']) ?>" class="action-link">Edit</a>
-                    <a href="<?= base_url('admin/delete/'.$user['id']) ?>" class="action-link" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                    <a href="<?= base_url('admin/delete/'.$user['id']) ?>" style="background-color: darkred; color: white" class="action-link" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -291,7 +134,7 @@
                 <td><?= $accountant['email'] ?></td>
                 <td>
                     <a href="<?= base_url('admin/edit/'.$accountant['id']) ?>" class="action-link">Edit</a>
-                    <a href="<?= base_url('admin/delete/'.$accountant['id']) ?>" class="action-link" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                    <a href="<?= base_url('admin/delete/'.$accountant['id']) ?>" style="background-color: darkred; color: white" class="action-link" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -321,7 +164,7 @@
                 <td><?= $admin['email'] ?></td>
                 <td>
                     <a href="<?= base_url('admin/edit/'.$admin['id']) ?>" class="action-link">Edit</a>
-                    <a href="<?= base_url('admin/delete/'.$admin['id']) ?>" style="background-color: darkred; color: white" class="action-link" onclick="return confirm('Czy na pewno chcesz usunąć urzytkownika?');">Delete</a>
+                    <a href="<?= base_url('admin/delete/'.$admin['id']) ?>" style="background-color: darkred; color: white"  class="action-link" onclick="return confirm('Czy na pewno chcesz usunąć urzytkownika?');">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>

@@ -24,4 +24,5 @@ class MenuModel extends Model
 
         return $this->whereIn('DATE_FORMAT(date, "%Y-%m")', $monthStrings)->orderBy('date', 'asc')->findAll();
     }
+
 }

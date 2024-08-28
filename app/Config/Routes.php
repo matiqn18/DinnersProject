@@ -51,7 +51,7 @@ $routes->group('user', ['filter' => 'user_auth'], function($routes) {
     $routes->get('order', 'User::showOrder/1');
     $routes->get('order_mobile', 'User::showOrder/0');
     $routes->get('order_mobile/(:num)', 'User::showOrder/0/$1');
-    $routes->post('save', 'User::saveOrder');
+    $routes->post('saveOrder', 'User::saveOrder');
     $routes->get('changeMonth/(:any)/(:num)', 'User::changeMonth/$1/$2');
     $routes->get('info', 'User::profile');
     $routes->post('selectClass', 'User::selectClass');

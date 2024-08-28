@@ -81,12 +81,13 @@ class Auth extends BaseController
         $user = $userModel->where('username', $usernameOrEmail)->orWhere('email', $usernameOrEmail)->first();
 
         if ($user && password_verify($password, $user['password'])) {
+            $role = $user['role'];
             if ($user['class_id'] == 1002) {
+                $role = 3;
                 $userModel->update($user['id'], [
                     'class_id' => null,
-                    'role' => 3
+                    'role' => $role
                 ]);
-                $user['role'] = 3;
             }
             $session = session();
             $session->set([
@@ -97,7 +98,6 @@ class Auth extends BaseController
                 'role' => $user['role'],
             ]);
 
-            $role = $user['role'];
             return $this->redirectToDashboard($role);
         } else {
             return redirect()->back()->with('error', 'Niepoprawna nazwa użytkownika, adres e-mail lub hasło.');

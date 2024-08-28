@@ -189,8 +189,12 @@ class Admin extends BaseController
             'surname' => $this->request->getPost('surname'),
             'email' => $this->request->getPost('email'),
             'role' => $this->request->getPost('role'),
-            'class_id' => $this->request->getPost('class')
+            'class_id' => $this->request->getPost('class_id')
         ];
+
+        if (empty($data['class_id']) && $data['role'] == '2') {
+            $data['class_id'] = 1002;
+        }
 
         if ($this->request->getPost('password')) {
             $data['password'] = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);

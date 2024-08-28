@@ -29,7 +29,7 @@ function getDayName($date) {
         <?= $currentIndex == count($months) - 1 ? 'style="pointer-events: none; color: gray;"' : '' ?>>
         Następny miesiąc
     </a>
-    <form method="post" action="<?= base_url('user/save') ?>">
+    <form method="post" action="<?= base_url('user/saveOrder') ?>">
         <div class="calendar">
             <?php foreach ($menu as $item): ?>
                 <?php $dayName = getDayName($item['date']); ?>
