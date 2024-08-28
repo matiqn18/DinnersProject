@@ -8,9 +8,11 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Auth::loginForm');
 $routes->get('/register', 'Auth::registerForm');
-$routes->get('/user_panel', 'UserPanelController::index');
+//$routes->get('/user_panel', 'UserPanelController::index');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/forgotpass', 'Auth::forgotpass');
+$routes->get('/menu', 'Home::showMenu');
+
 
 
 

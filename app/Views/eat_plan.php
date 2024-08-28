@@ -3,34 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dzisiejszy obiad</title>
+    <title>Jadłospis na najbliższe dni</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('main_style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('back_button.css'); ?>">
+    <style>
+
+
+    </style>
 </head>
 <body>
-<style>
-</style>
-<main>
-
+<main style="max-width: 1000px">
+    <button class="close-btn" style="margin-bottom: 10px" onclick="window.location.href='<?php echo base_url(); ?>'">X</button>
     <header class="menu">
-        <h1>Obiady na najbliższe 2 tygodnie</h1>
+        <h1>Jadłospis na najbliższe dni</h1>
     </header>
 
-    <div class="meal-schedule">
-        <?php if ($meals && count($meals) > 0): ?>
+    <?php if ($meals): ?>
+        <table>
+            <thead>
+            <tr>
+                <th>Data</th>
+                <th>Składniki</th>
+            </tr>
+            </thead>
+            <tbody>
             <?php foreach ($meals as $meal): ?>
-                <div class="meal">
-                    <h2><?php echo date('d-m-Y', strtotime($meal->date)); ?></h2>
-                    <p><?php echo htmlspecialchars($meal->ingredients); ?></p>
-                </div>
+                <tr>
+                    <td><strong><?php echo date('Y-m-d', strtotime($meal['date'])); ?></strong></td>
+                    <td><?php echo htmlspecialchars($meal['ingredients']); ?></td>
+                </tr>
             <?php endforeach; ?>
-        <?php else: ?>
-            <h2>Brak dostępnych obiadów na najbliższe 2 tygodnie.</h2>
-        <?php endif; ?>
-    </div>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <h2>Brak posiłków do wyświetlenia.</h2>
+    <?php endif; ?>
 </main>
 
 <?php include 'footer.php'; ?>
-
 </body>
 </html>

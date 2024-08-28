@@ -25,4 +25,23 @@ class MenuModel extends Model
         return $this->whereIn('DATE_FORMAT(date, "%Y-%m")', $monthStrings)->orderBy('date', 'asc')->findAll();
     }
 
+
+    public function getTodayAndNextMeals()
+    {
+        $today = date('Y-m-d');
+        $dayOfWeek = date('N');
+
+        if ($dayOfWeek >= 6) {
+            $monday = date('Y-m-d', strtotime('next monday'));
+        } else {
+            $monday = $today;
+        }
+
+        $meals = $this->where('date >=', $monday)
+            ->orderBy('date', 'asc')
+            ->findAll(11);
+
+        return $meals;
+    }
+
 }
