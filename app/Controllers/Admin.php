@@ -206,11 +206,32 @@ class Admin extends BaseController
     }
     public function delete($id): \CodeIgniter\HTTP\RedirectResponse
     {
+        // Załaduj modele
         $userModel = new UserModel();
-        $userModel->delete($id);
+        $mealModel = new MealModel();
+        $paymentModel = new PaymentModel();
 
-        return redirect()->to(base_url('admin/users'))->with('success', 'Użytkownik usunięty pomyślnie.');
+        // Rozpocznij transakcję
+        $this->db->transBegin();
+
+        try {
+            $paymentModel->where('user_id', $id)->delete();
+            $mealModel->where('user_id', $id)->delete();
+            $userModel->delete($id);
+
+            if ($this->db->transStatus() === FALSE) {
+                $this->db->transRollback();
+                return redirect()->to(base_url('admin/users'))->with('error', 'Nie udało się usunąć użytkownika. Proszę spróbować ponownie później.');
+            } else {
+                $this->db->transCommit();
+                return redirect()->to(base_url('admin/users'))->with('success', 'Użytkownik usunięty pomyślnie.');
+            }
+        } catch (\Exception $e) {
+            $this->db->transRollback();
+            return redirect()->to(base_url('admin/users'))->with('error', 'Wystąpił błąd: ' . $e->getMessage());
+        }
     }
+
     private function  graduationUser(): void
     {
         $SpClass = ['1', '2', '4', '5', '6', '7'];
