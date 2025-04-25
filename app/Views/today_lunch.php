@@ -20,7 +20,7 @@
         <h1>Dzisiejszy obiad</h1>
     </header>
 
-    <?php if ($meal->ingredients): ?>
+    <?php if ($meal && $meal->ingredients): ?>
         <div class="meal-container">
             <h2><?php echo $meal->ingredients; ?></h2>
         </div>
