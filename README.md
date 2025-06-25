@@ -37,7 +37,8 @@ DinnersProject is a web application built with CodeIgniter 4, designed to manage
 
 ## License
 
-This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit [https://creativecommons.org/licenses/by-nc-sa/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This project is licensed under the **GNU General Public License v3.0**.
+The full text of the license can be found in the file [`LICENSE`](./LICENSE)
 
 ## Author
 
